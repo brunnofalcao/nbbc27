@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save the Date — Nutrição Brasil Balneário Camboriú 2027</title>
+<meta name="description" content="O maior evento de nutrição do Brasil volta a Balneário Camboriú. 13 de março de 2027. Cadastre-se e seja o primeiro a garantir sua vaga.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nutrição Brasil 2027 — Save the Date">
+<meta property="og:description" content="13 de março. Balneário Camboriú. O evento que reuniu quase 200 profissionais em 2026 volta ainda maior. Cadastre-se para ser avisado antes de todo mundo.">
+<meta property="og:image" content="https://SEUDOMINIO.vercel.app/og-image.png">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:url" content="https://SEUDOMINIO.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nutrição Brasil 2027 — Save the Date">
+<meta name="twitter:description" content="13 de março. Balneário Camboriú. Quase 200 profissionais em 2026. Cadastre-se e garanta prioridade.">
+<meta name="twitter:image" content="https://SEUDOMINIO.vercel.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #7B5B8D;
+  --purple-deep: #5C3D6E;
+  --purple-bg: #6B4D7D;
+  --bege: #D4A48E;
+  --bege-light: #E0B3A1;
+  --azul: #80C0FF;
+  --white: #ffffff;
+  --text: #e8ddf0;
+  --muted: #b8a0c8;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--purple-bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* HERO — FULL SCREEN */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #8B6B9D 0%, #6B4D7D 40%, #5C3D6E 100%);
+}
+
+/* SAVE THE DATE — background watermark */
+.hero-watermark {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-size: clamp(120px, 22vw, 280px);
+  font-weight: 900;
+  line-height: 0.85;
+  color: rgba(212, 164, 142, 0.12);
+  text-transform: uppercase;
+  pointer-events: none;
+  text-align: right;
+  white-space: nowrap;
+  z-index: 0;
+  user-select: none;
+}
+.hero-watermark span {
+  display: block;
+}
+
+/* Subtle animated glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(ellipse at 30% 40%, rgba(128, 192, 255, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(212, 164, 142, 0.06) 0%, transparent 45%);
+  animation: glow 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes glow { 0% { transform: scale(1); } 100% { transform: scale(1.08) translate(2%, -1%); } }
+
+/* Content layer */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* NB Logo */
+.hero-logo {
+  width: 220px;
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 40px;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+
+/* SAVE THE DATE label */
+.std-label {
+  font-family: var(--serif);
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 700;
+  color: var(--bege);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s ease 0.4s both;
+}
+
+/* Date */
+.hero-date {
+  font-family: var(--serif);
+  font-size: clamp(48px, 12vw, 96px);
+  font-weight: 900;
+  color: var(--azul);
+  line-height: 0.9;
+  margin-bottom: 4px;
+  animation: fadeUp 0.7s ease 0.5s both;
+}
+.hero-month {
+  font-family: var(--sans);
+  font-size: clamp(18px, 4vw, 28px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  animation: fadeUp 0.7s ease 0.6s both;
+}
+.hero-year {
+  font-family: var(--serif);
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 900;
+  color: var(--azul);
+  line-height: 1;
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s ease 0.65s both;
+}
+
+/* Location */
+.hero-location {
+  font-family: var(--sans);
+  font-size: clamp(13px, 2.5vw, 16px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  animation: fadeUp 0.7s ease 0.7s both;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.7s ease 0.8s both;
+}
+.cd-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 16px 12px;
+  min-width: 72px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.cd-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cd-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* CTA text */
+.hero-cta-text {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s ease 0.9s both;
+}
+.hero-cta-text strong {
+  color: var(--white);
+}
+
+/* Form placeholder */
+.form-area {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 440px;
+  margin: 0 auto;
+  animation: fadeUp 0.7s ease 1s both;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.form-area-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bege-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* Placeholder form (replace with RD Station embed) */
+.form-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.25s;
+}
+.form-input::placeholder {
+  color: var(--muted);
+}
+.form-input:focus {
+  border-color: var(--bege);
+  background: rgba(255, 255, 255, 0.12);
+}
+.form-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--bege);
+  color: var(--purple-deep);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.form-btn:hover {
+  background: var(--bege-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 164, 142, 0.3);
+}
+.form-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* RD Station form embed container — unhide when you paste the form */
+.rd-form-container {
+  /* Paste your RD Station form embed code inside this div */
+  /* Then hide .form-placeholder with display:none */
+}
+
+/* RD Station Form Override */
+.rd-form-container .bricks-form { background: transparent !important; border: none !important; padding: 0 !important; }
+.rd-form-container .bricks-form .bricks-form__fieldset { padding: 0 !important; }
+.rd-form-container .bricks-form label { color: var(--muted) !important; font-family: var(--sans) !important; font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0.5px !important; }
+.rd-form-container .bricks-form input[type="text"],
+.rd-form-container .bricks-form input[type="email"],
+.rd-form-container .bricks-form input[type="tel"],
+.rd-form-container .bricks-form select,
+.rd-form-container .bricks-form textarea {
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(255,255,255,.15) !important;
+  border-radius: 10px !important;
+  color: var(--white) !important;
+  font-family: var(--sans) !important;
+  font-size: 15px !important;
+  padding: 14px 18px !important;
+  transition: all 0.25s !important;
+}
+.rd-form-container .bricks-form input:focus,
+.rd-form-container .bricks-form select:focus,
+.rd-form-container .bricks-form textarea:focus {
+  border-color: var(--bege) !important;
+  background: rgba(255,255,255,.12) !important;
+  outline: none !important;
+}
+.rd-form-container .bricks-form .bricks-form__submit {
+  background: var(--bege) !important;
+  color: var(--purple-deep) !important;
+  font-family: var(--sans) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  cursor: pointer !important;
+  transition: all 0.25s !important;
+  width: 100% !important;
+}
+.rd-form-container .bricks-form .bricks-form__submit:hover {
+  background: var(--bege-light) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 24px rgba(212,164,142,.3) !important;
+}
+.rd-form-container .bricks-form p,
+.rd-form-container .bricks-form .legal-text { color: var(--muted) !important; font-size: 11px !important; }
+
+/* Footer strip */
+.footer-strip {
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+  text-align: center;
+  animation: fadeUp 0.7s ease 1.1s both;
+}
+.footer-strip img {
+  height: 20px;
+  width: auto;
+  opacity: 0.4;
+  transition: opacity 0.25s;
+}
+.footer-strip img:hover {
+  opacity: 0.7;
+}
+.footer-strip-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 10px;
+}
+.footer-strip-text a {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 80px 20px 40px; }
+  .hero-watermark { font-size: 100px; right: -10%; opacity: 0.08; }
+  .countdown { gap: 10px; }
+  .cd-item { min-width: 60px; padding: 12px 8px; }
+  .cd-num { font-size: 26px; }
+  .form-area { padding: 24px 18px; }
+  .hero-logo { margin-bottom: 28px; }
+}
+
+@media (max-width: 380px) {
+  .countdown { gap: 6px; }
+  .cd-item { min-width: 52px; padding: 10px 6px; }
+  .cd-num { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <!-- Watermark background text -->
+  <div class="hero-watermark">
+    <span>Save</span>
+    <span>The</span>
+    <span>Date</span>
+  </div>
+
+  <div class="hero-content">
+    <!-- Logo -->
+    <img src="https://email-editor-production.s3.amazonaws.com/images/222578/nb_Logotipo_05.png" alt="Nutrição Brasil" class="hero-logo">
+
+    <!-- Save the Date -->
+    <div class="std-label">Save the Date</div>
+
+    <!-- Date block -->
+    <div class="hero-date">13</div>
+    <div class="hero-month">Março</div>
+    <div class="hero-year">2027</div>
+
+    <!-- Location -->
+    <div class="hero-location">Balneário Camboriú | SC</div>
+
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">
+      <div class="cd-item">
+        <div class="cd-num" id="cd-days">--</div>
+        <div class="cd-label">Dias</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-num" id="cd-hours">--</div>
+        <div class="cd-label">Horas</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-num" id="cd-mins">--</div>
+        <div class="cd-label">Min</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-num" id="cd-secs">--</div>
+        <div class="cd-label">Seg</div>
+      </div>
+    </div>
+
+    <!-- CTA Text -->
+    <div class="hero-cta-text">
+      Cadastre-se para ser o <strong>primeiro a saber</strong> quando as inscrições abrirem.
+    </div>
+
+    <!-- Form Area -->
+    <div class="form-area">
+      <div class="form-area-title">Lista de interesse</div>
+
+      <!-- PLACEHOLDER FORM — hidden, RD Station active -->
+      <div class="form-placeholder" id="placeholder-form" style="display:none">
+      </div>
+
+      <!-- RD STATION FORM -->
+      <div class="rd-form-container" id="rd-form">
+        <div role="main" id="nutricao-brasil-2027-balneario-camboriu-5b07a76a131eeb9b289a"></div>
+        <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+        <script type="text/javascript">new RDStationForms('nutricao-brasil-2027-balneario-camboriu-5b07a76a131eeb9b289a', 'UA-72189437-19').createForm();</script>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-strip">
+      <img src="https://email-editor-production.s3.amazonaws.com/images/222578/Science%20Play%20-%20Negativa.png" alt="Science Play">
+      <div class="footer-strip-text">
+        Realização <a href="https://nutricaobrasil.com.br" target="_blank">Science Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Countdown to March 13, 2027
+function updateCountdown() {
+  const target = new Date('2027-03-13T09:00:00-03:00').getTime();
+  const now = Date.now();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hours').textContent = '0';
+    document.getElementById('cd-mins').textContent = '0';
+    document.getElementById('cd-secs').textContent = '0';
+    return;
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('cd-days').textContent = d;
+  document.getElementById('cd-hours').textContent = h.toString().padStart(2, '0');
+  document.getElementById('cd-mins').textContent = m.toString().padStart(2, '0');
+  document.getElementById('cd-secs').textContent = s.toString().padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
