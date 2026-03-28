@@ -211,86 +211,21 @@ body {
 }
 
 /* Form placeholder */
-.form-area {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  padding: 32px 24px;
-  max-width: 440px;
-  margin: 0 auto;
-  animation: fadeUp 0.7s ease 1s both;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+/* Form title */
 .form-area-title {
   font-size: 14px;
   font-weight: 700;
   color: var(--bege-light);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 16px;
-}
-
-/* Placeholder form (replace with RD Station embed) */
-.form-placeholder {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.form-input {
-  width: 100%;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  color: var(--white);
-  font-family: var(--sans);
-  font-size: 15px;
-  outline: none;
-  transition: all 0.25s;
-}
-.form-input::placeholder {
-  color: var(--muted);
-}
-.form-input:focus {
-  border-color: var(--bege);
-  background: rgba(255, 255, 255, 0.12);
-}
-.form-btn {
-  width: 100%;
-  padding: 16px;
-  background: var(--bege);
-  color: var(--purple-deep);
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.25s;
-}
-.form-btn:hover {
-  background: var(--bege-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(212, 164, 142, 0.3);
-}
-.form-note {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 4px;
-}
-
-/* RD Station form embed container — unhide when you paste the form */
-.rd-form-container {
-  /* Paste your RD Station form embed code inside this div */
-  /* Then hide .form-placeholder with display:none */
 }
 
 /* RD Station Form Override */
-.rd-form-container .bricks-form { background: transparent !important; border: none !important; padding: 0 !important; }
-.rd-form-container .bricks-form .bricks-form__fieldset { padding: 0 !important; }
+.rd-form-container { background: transparent !important; }
+.rd-form-container div[role="main"] { background: transparent !important; }
+.rd-form-container .bricks-form { background: transparent !important; border: none !important; padding: 0 !important; box-shadow: none !important; }
+.rd-form-container .bricks-form .bricks-form__fieldset { padding: 0 !important; background: transparent !important; }
+.rd-form-container .bricks--component { background: transparent !important; }
 .rd-form-container .bricks-form label { color: var(--muted) !important; font-family: var(--sans) !important; font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0.5px !important; }
 .rd-form-container .bricks-form input[type="text"],
 .rd-form-container .bricks-form input[type="email"],
@@ -313,7 +248,9 @@ body {
   background: rgba(255,255,255,.12) !important;
   outline: none !important;
 }
-.rd-form-container .bricks-form .bricks-form__submit {
+.rd-form-container .bricks-form .bricks-form__submit,
+.rd-form-container .bricks-form button[type="submit"],
+.rd-form-container .bricks-form input[type="submit"] {
   background: var(--bege) !important;
   color: var(--purple-deep) !important;
   font-family: var(--sans) !important;
@@ -327,14 +264,26 @@ body {
   cursor: pointer !important;
   transition: all 0.25s !important;
   width: 100% !important;
+  box-shadow: none !important;
 }
-.rd-form-container .bricks-form .bricks-form__submit:hover {
+.rd-form-container .bricks-form .bricks-form__submit:hover,
+.rd-form-container .bricks-form button[type="submit"]:hover {
   background: var(--bege-light) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 24px rgba(212,164,142,.3) !important;
 }
+/* Kill wrapper backgrounds around button */
+.rd-form-container .bricks-form__submit,
+.rd-form-container .bricks-form__submit * { background-color: transparent !important; }
+.rd-form-container .bricks-form__submit button,
+.rd-form-container .bricks-form__submit input[type="submit"] { background: var(--bege) !important; }
 .rd-form-container .bricks-form p,
 .rd-form-container .bricks-form .legal-text { color: var(--muted) !important; font-size: 11px !important; }
+.rd-form-container .bricks-form .legal-text a { color: var(--bege) !important; }
+/* Kill any remaining white backgrounds from RD */
+.rd-form-container *:not(input):not(select):not(textarea):not(button) { background-color: transparent !important; }
+.rd-form-container .bricks-form__field { background: transparent !important; }
+.rd-form-container .bricks-form select option { background: var(--purple-deep) !important; color: var(--white) !important; }
 
 /* Footer strip */
 .footer-strip {
@@ -435,21 +384,14 @@ body {
       Cadastre-se para ser o <strong>primeiro a saber</strong> quando as inscrições abrirem.
     </div>
 
-    <!-- Form Area -->
-    <div class="form-area">
-      <div class="form-area-title">Lista de interesse</div>
-
-      <!-- PLACEHOLDER FORM — hidden, RD Station active -->
-      <div class="form-placeholder" id="placeholder-form" style="display:none">
-      </div>
-
-      <!-- RD STATION FORM -->
+    <!-- Form Area — no box, RD renders directly -->
+    <div style="max-width:440px;margin:0 auto;animation:fadeUp .7s ease 1s both;">
+      <div class="form-area-title" style="text-align:center;margin-bottom:16px;">Lista de interesse</div>
       <div class="rd-form-container" id="rd-form">
         <div role="main" id="nutricao-brasil-2027-balneario-camboriu-5b07a76a131eeb9b289a"></div>
         <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
         <script type="text/javascript">new RDStationForms('nutricao-brasil-2027-balneario-camboriu-5b07a76a131eeb9b289a', 'UA-72189437-19').createForm();</script>
       </div>
-
     </div>
 
     <!-- Footer -->
